@@ -26,11 +26,9 @@ Route::middleware(['checkLogin'])->group(function(){
     Route::get('User/edit/{id}',[userController::class,'edit']);
     Route::put('User/update/{id}',[userController::class,'update']);
     Route::get("User/LogOut",[userController::class,'LogOut']);
-
-
-
+    Route::resource('Task',taskController::class);
 });
-Route::resource('Task',taskController::class);
+
 Route::get('User/create',[userController::class,'create']);
 Route::post('User/store',[userController::class,'Store']);
 Route::get("User/Login",[userController::class,'login']);

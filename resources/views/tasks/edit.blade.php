@@ -14,10 +14,6 @@
 
 
 
-
-
-
-
     <div class="container">
         <h2>Edit Tasks</h2>
 
@@ -33,7 +29,7 @@
         @endif
 
 
-        <form action="{{ url('Blog/'.$data->id) }}" method="post" enctype="multipart/form-data">
+        <form action="{{ url('Task/'.$data->id) }}" method="post" enctype="multipart/form-data">
 
             @csrf
             @method("put")

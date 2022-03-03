@@ -100,7 +100,7 @@ class userController extends Controller
 
        if(auth()->attempt($data)){
 
-        return redirect(url('/User'));
+        return redirect(url('/Task'));
 
        }else{
            session()->flash('Message','invalid Data');

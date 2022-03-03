@@ -163,7 +163,8 @@ class taskController extends Controller
         //
         $data =  task::find($id);
 
-        $op =  task::find($id)->delete();
+        $op   =  task::find($id)->delete();
+
         if ($op) {
             unlink(public_path('taskImages/' . $data->image));
             $message = "Raw Removed";
