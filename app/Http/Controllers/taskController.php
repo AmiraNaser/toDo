@@ -16,7 +16,7 @@ class taskController extends Controller
     public function index()
     {
         //
-        $data = task::join('users', 'users.id', '=', 'tasks.user_id')->select('tasks.*', 'users.name as userName', 'users.id')->where('users.id', '=', 'tasks.user_id')->get();
+        $data = task::join('users', 'users.id', '=', 'tasks.user_id')->select('tasks.*', 'users.name as userName', 'users.id')->where('tasks.user_id', '=', auth()->user()->id)->get();
 
         return view('tasks.index', ['data' => $data]);
     }
